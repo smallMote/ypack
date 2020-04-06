@@ -6,5 +6,6 @@ const config = require(path.resolve('webpack.config.js'));
 // 2.解析配置文件
 const Compiler = require('./lib/Compiler.js');
 const compiler = new Compiler(config);
+compiler.hooks.entryOption.call(); // 执行入口钩子
 // 3.编译配置文件
-compiler.start();
+compiler.run();
